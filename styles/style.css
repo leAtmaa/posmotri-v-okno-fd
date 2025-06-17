@@ -9,6 +9,7 @@ html {
 }
 
 .page {
+  display: flex;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -16,6 +17,10 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
 }
 
 h1,
@@ -48,4 +53,306 @@ ol {
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #D9D9D9;
+}
+
+.content {
+  max-width: 1140px;
+  display: flex;
+  gap: 30px;
+}
+
+.result {
+  max-height: 456px;
+  width: 711px;
+  margin: 78px 0 auto 0;
+}
+
+.result__video-container {
+  position: relative;
+  cursor: pointer;  
+}
+
+.result__video { /**Блок с видео, идеально встал, не трогаем**/
+  min-width: 711px;
+  justify-content: end;
+  max-height: 386px;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.search-form { /**Блок с формами город, время суток и кнопка**/
+  display: flex;
+  justify-content: space-between;
+  max-height: 54px;
+}
+
+.search-form__fieldset {
+  border: none;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 100%;
+  align-self: start;
+}
+.search-form__checkbox-list { /**Блок утро, день, ночь**/
+  display: flex;
+  gap: 15px;
+}
+
+.search-form__label {
+display: flex;
+flex-direction: row;
+align-items: center;
+}
+
+.search-form__fieldset-title { /**Заголовок филдсета**/
+  font-size: 18px;
+  line-height: 100%;
+  font-weight: 400;
+  letter-spacing: 0%;
+  margin-bottom: 7px;
+  margin-top: -3px;
+} 
+
+.search-form__textfield { /**Инпут Санкт-Петербург, например   Стилизовала инпут**/ 
+  padding: 1px 20px 2.5px 0;
+  font-size: 18px;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  appearance: none;
+  width: 225px;
+  background: none;
+  color: #fff;
+}
+
+.search-form__textfield::placeholder {
+  overflow: visible; 
+}
+
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  cursor: pointer;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid white;
+  outline-offset: 1px;
+  caret-color: transparent;
+}
+
+.search-form__textfield:active {
+  border: 1px solid white;
+  caret-color: transparent;
+}
+
+.search-form__checkbox { /**Чекбокс с временем суток**/
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  align-items: start;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  max-width: 212px;
+  justify-content: space-between;
+}
+
+.visually-hidden {  /**Код из описания ПР**/
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.search-form__pseudo-checkbox {
+  background-color: transparent;
+  width: 19px;
+  height: 19px;
+  border: 1px solid rgb(255, 255, 255);
+  align-items: center;
+  justify-content: center;
+  margin: 1.5px 5px 1.5px 0;
+  position: relative;
+  flex-shrink: 0; 
+}
+
+.search-form__pseudo-checkbox::after { 
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-form__checkbox ~ span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.search-form__label:active + span{
+  background-color: #fff;
+  cursor: pointer;
+}
+
+input[type='checkbox']:checked + span {
+   background-color: rgb(255, 255, 255);
+  width: 19px;
+  height: 19px;
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: 0 0 0 1px #1b1919 inset; 
+  align-items: center;
+  justify-content: center;
+  margin: 1.5px 5px 1.5px 0;
+}
+
+.button {
+  background-color: transparent;
+  border: 1px solid #fff;
+  font-size: 18px;
+  color: #fff;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 700;
+  line-height: 100%;
+  align-self: end;
+}
+
+.button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.button:active {
+  box-shadow: inset 0 0 0 100px rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+}
+
+.button:focus-visible {
+  outline: 1px solid white;
+  outline-offset: 1px;
+  cursor: pointer;                        
+}
+
+.search-form__submit-button { /**Кнопка Найти**/
+  padding: 7px 72.5px;
+}
+
+.content__details {
+  min-width: 399px;
+}
+
+.title {
+  font-size: 75px;
+  line-height: 94%;
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  margin: 2px 140px 22px 0;
+}
+
+.content__accent {
+  opacity: 0.2;
+}
+
+.content__list-container { /**Блок с карточками городов**/
+  max-height: 298px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.content__list-container::after {
+  position: absolute;
+}
+
+.content__list-item { /**Пункт списка городов**/
+  max-width: 390px;
+  padding: 1px;
+  margin: auto 7px auto 2px;
+}
+
+.content__video-card { /**Карточка**/
+  display: inline-flex;
+  margin-bottom: 30px;
+}
+
+.content__video-card-description-container {
+  width: 196px;
+  height: 103px;
+}
+
+.content__video-card-thumbnail { /**Фото города**/
+  width: 194px;
+  height: 103px;
+}
+
+.content__card-link { /**Ссылка**/
+  text-decoration: none;
+}
+
+.content__video-card-title { /**Название города**/
+  font-size:30px;
+  line-height: 98%;
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  margin-bottom: 6px;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #fff;
+}
+
+.content__video-card-description { /**Описание города**/
+  font-size: 18px;
+  line-height: 16.2px;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0%;
+  color: #fff;
+}
+
+.more-button { /**Кнопка Показать еще**/
+  padding: 7px 141px;
+  margin-bottom: 2px;
+  margin-right: 2px;
+}
+
+.content__video-card:hover {
+  text-decoration: underline;
+  color: #fff;
+  cursor: pointer;
+}
+
+.content__video-card:active {
+  box-shadow: inset 0 0 0 100px rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.content__card-link:focus {
+  outline: none;
+  color: #fff;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid rgb(255, 255, 255);
+  border-radius: 0; 
+  cursor: pointer;
+}
+
+.error-template {
+  min-width: 711px;
+  max-height: 386px;
+  margin-bottom: 100px;
 }
