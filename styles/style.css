@@ -19,8 +19,9 @@ html {
   background-color: #1b1919;
   width: 100%;
   justify-content: center;
-  align-items: center;
-  overflow-x: hidden;
+  /*align-items: center;*/
+  overflow-x: auto;
+  margin-top: 133px;
 }
 
 h1,
@@ -62,9 +63,8 @@ ol {
 }
 
 .result {
-  max-height: 456px;
   width: 711px;
-  margin: 78px 0 auto 0;
+  margin: 76px 0 auto 0;
 }
 
 .result__video-container {
@@ -83,7 +83,6 @@ ol {
 .search-form { /**Блок с формами город, время суток и кнопка**/
   display: flex;
   justify-content: space-between;
-  max-height: 54px;
 }
 
 .search-form__fieldset {
@@ -94,6 +93,7 @@ ol {
   line-height: 100%;
   align-self: start;
 }
+
 .search-form__checkbox-list { /**Блок утро, день, ночь**/
   display: flex;
   gap: 15px;
@@ -111,15 +111,14 @@ align-items: center;
   font-weight: 400;
   letter-spacing: 0%;
   margin-bottom: 7px;
-  margin-top: -3px;
 } 
 
 .search-form__textfield { /**Инпут Санкт-Петербург, например   Стилизовала инпут**/ 
   padding: 1px 20px 2.5px 0;
   font-size: 18px;
   font-family: 'Fira Sans Condensed', sans-serif;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
   border-left: none;
   border-right: none;
   outline: none;
@@ -215,7 +214,7 @@ input[type='checkbox']:checked + span {
 
 .button {
   background-color: transparent;
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
   font-size: 18px;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
@@ -264,7 +263,7 @@ input[type='checkbox']:checked + span {
 .content__list-container { /**Блок с карточками городов**/
   max-height: 298px;
   overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: auto;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -282,12 +281,11 @@ input[type='checkbox']:checked + span {
 
 .content__video-card { /**Карточка**/
   display: inline-flex;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
 
 .content__video-card-description-container {
   width: 196px;
-  height: 103px;
 }
 
 .content__video-card-thumbnail { /**Фото города**/
@@ -297,6 +295,7 @@ input[type='checkbox']:checked + span {
 
 .content__card-link { /**Ссылка**/
   text-decoration: none;
+  padding: 12px 0 69.5px 0;
 }
 
 .content__video-card-title { /**Название города**/
@@ -305,7 +304,7 @@ input[type='checkbox']:checked + span {
   text-transform: uppercase;
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   margin-top: 2px;
   white-space: nowrap;
   overflow: hidden;
@@ -320,6 +319,11 @@ input[type='checkbox']:checked + span {
   font-weight: 400;
   letter-spacing: 0%;
   color: #fff;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  overflow: hidden; 
 }
 
 .more-button { /**Кнопка Показать еще**/
@@ -328,14 +332,15 @@ input[type='checkbox']:checked + span {
   margin-right: 2px;
 }
 
-.content__video-card:hover {
+.content__card-link:hover .content__video-card-title, 
+.content__card-link:hover .content__video-card-description  {
   text-decoration: underline;
   color: #fff;
   cursor: pointer;
 }
 
-.content__video-card:active {
-  box-shadow: inset 0 0 0 100px rgba(255, 255, 255, 0.25);
+.content__card-link:active {
+  background-color: #545050;
   cursor: pointer;
   text-decoration: none;
 }
