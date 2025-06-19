@@ -19,9 +19,9 @@ html {
   background-color: #1b1919;
   width: 100%;
   justify-content: center;
-  /*align-items: center;*/
+  align-items: center;
   overflow-x: auto;
-  margin-top: 133px;
+  overflow-y: auto;
 }
 
 h1,
@@ -332,6 +332,10 @@ input[type='checkbox']:checked + span {
   margin-right: 2px;
 }
 
+.content__card-link_current {
+  background-color: #545050;
+}
+
 .content__card-link:hover .content__video-card-title, 
 .content__card-link:hover .content__video-card-description  {
   text-decoration: underline;
@@ -340,7 +344,6 @@ input[type='checkbox']:checked + span {
 }
 
 .content__card-link:active {
-  background-color: #545050;
   cursor: pointer;
   text-decoration: none;
 }
